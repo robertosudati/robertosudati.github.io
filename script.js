@@ -292,8 +292,6 @@ if(temFiltro){
 
 }
 
-
-
 for(let gCasa = minCasa; gCasa <= maxCasa; gCasa++){
 
     for(let gVisitante = minVisitante; gVisitante <= maxVisitante; gVisitante++){
@@ -358,13 +356,10 @@ for(let gCasa = minCasa; gCasa <= maxCasa; gCasa++){
 
 }
 
-
         todosPlacares.push(placaresDoJogo);
 
 
     });
-
-
 
     // FAZ A MULTIPLICAÇÃO DAS POSSIBILIDADES
 
@@ -391,155 +386,38 @@ for(let gCasa = minCasa; gCasa <= maxCasa; gCasa++){
 
             });
 
-
         });
-
 
         combinacoes = novasCombinacoes;
 
-
     });
-
-
-
-// MOSTRA RESULTADO EM TABELA
-
-let html = `
-
-<table border="1">
-
-<tr>
-<th>Aposta</th>
-`;
-
-
-// cria cabeçalho dos jogos
-
-if(combinacoes.length > 0){
-
-    combinacoes[0].forEach((jogo,index)=>{
-
-        html += `
-        <th>Jogo ${index+1}</th>
-        `;
-
-    });
-
-}
-
-
-html += `</tr>`;
-
-
-combinacoes.forEach((aposta,index)=>{
-
-
-    html += `
-
-    <tr>
-
-    <td>${index+1}</td>
-
-    `;
-
-
-    aposta.forEach(jogo=>{
-
-
-        html += `
-
-        <td>
-        ${jogo.casa}
-        ${jogo.golsCasa}
-        x
-        ${jogo.golsVisitante}
-        ${jogo.visitante}
-        </td>
-
-        `;
-
-
-    });
-
-
-    html += `
-
-    </tr>
-
-    `;
-
-
-});
-
-
-html += `</table>`;
-
-
-
-
-
-    resultado.innerHTML = html;
-
-
-
-    
-
 
 let filtros = filtrosPlacares;
-let totalInicial = combinacoes.length;
-
-
-
-
-
-
-
 
 if(filtros.length > 0){
 
-
     combinacoes = combinacoes.filter(aposta => {
 
-
         return !aposta.some(jogo => {
-
 
             let placar =
             jogo.golsCasa + "-" + jogo.golsVisitante;
 
-
             return filtros.includes(placar);
-
 
         });
 
-
     });
 
-
 }
-    document.querySelector("#total").innerHTML =
-    `Total de combinações: ${combinacoes.length}`;
-  document.querySelector("#resumoFiltros").innerHTML = `
-
-<p>
-<strong>Combinações geradas:</strong>
-${totalInicial}
-</p>
-
-<p>
-<strong>Filtros aplicados:</strong><br>
-
-${textoFiltrosJogos || "Nenhum filtro aplicado"}
-
-</p>
-
-<p>
-<strong>Combinações restantes:</strong>
-${combinacoes.length}
-</p>
-
+document.querySelector("#total").innerHTML = `
+<strong>Total de combinações:</strong> ${combinacoes.length.toLocaleString("pt-BR")}
 `;
+
+document.querySelector("#resumoFiltros").innerHTML = `
+<strong>Filtros aplicados:</strong> ${textoFiltrosJogos || "Nenhum filtro aplicado"}
+`;
+verificarResumo();
 
 
 todasCombinacoes = combinacoes;
@@ -548,8 +426,6 @@ paginaAtual = 1;
 
 mostrarPagina();
     
-console.log(combinacoes);
-
 }
 function mostrarPagina(){
 
@@ -582,9 +458,7 @@ function mostrarPagina(){
 
     }
 
-
     html += "</tr>";
-
 
     pagina.forEach((aposta,index)=>{
 
@@ -615,15 +489,11 @@ function mostrarPagina(){
 
             `;
 
-
         });
-
 
         html += "</tr>";
 
     });
-
-
 
     html += `
 
@@ -646,11 +516,9 @@ function mostrarPagina(){
     Próxima ➡
     </button>
 
-
     </div>
 
     `;
-
 
     resultado.innerHTML = html;
 
@@ -693,7 +561,6 @@ if(botaoFiltro){
 }
 
 
-
 function adicionarFiltroPlacar(){
 
     const casa =
@@ -708,16 +575,13 @@ function adicionarFiltroPlacar(){
         return;
     }
 
-
     const placar = casa + "-" + visitante;
-
 
     if(!filtrosPlacares.includes(placar)){
 
         filtrosPlacares.push(placar);
 
     }
-
 
     mostrarFiltrosPlacares();
 
@@ -730,9 +594,7 @@ function mostrarFiltrosPlacares(){
 
     lista.innerHTML = "";
 
-
     filtrosPlacares.forEach((placar,index)=>{
-
 
         lista.innerHTML += `
 
@@ -747,13 +609,9 @@ function mostrarFiltrosPlacares(){
 
         `;
 
-
     });
 
-
 }
-
-
 
 function removerFiltroPlacar(index){
 
@@ -766,8 +624,6 @@ document
 .getElementById("exportarPDF")
 .addEventListener("click", exportarPDF);
 
-
-
 function exportarPDF(){
 
 
@@ -779,12 +635,9 @@ function exportarPDF(){
 
     }
 
-
     const { jsPDF } = window.jspdf;
 
-
     const doc = new jsPDF('landscape');
-
 
     doc.text(
         "Gerador de Desdobramentos",
@@ -792,40 +645,29 @@ function exportarPDF(){
         15
     );
 
-
     let dados = [];
 
-
     todasCombinacoes.forEach((aposta,index)=>{
-
 
         let linha = [];
 
         linha.push(index + 1);
 
-
         aposta.forEach(jogo=>{
-
 
             linha.push(
                 `${jogo.casa} ${jogo.golsCasa}x${jogo.golsVisitante} ${jogo.visitante}`
             );
 
-
         });
-
 
         dados.push(linha);
 
-
     });
-
-
 
     let cabecalho = [
         "Aposta"
     ];
-
 
     if(todasCombinacoes.length > 0){
 
@@ -838,8 +680,6 @@ function exportarPDF(){
         });
 
     }
-
-
 
     doc.autoTable({
 
@@ -855,12 +695,9 @@ function exportarPDF(){
 
     });
 
-
-
     doc.save(
         "desdobramentos.pdf"
     );
-
 
 }
 function atualizarListaFiltros(card){
@@ -902,3 +739,17 @@ function removerFiltro(botao,index){
     atualizarListaFiltros(card);
 
 }
+function verificarResumo() {
+
+    const total = document.getElementById("total").innerHTML.trim();
+    const filtros = document.getElementById("resumoFiltros").innerHTML.trim();
+    const painel = document.getElementById("painelResumo");
+
+    if (total === "" && filtros === "") {
+        painel.style.display = "none";
+    } else {
+        painel.style.display = "block";
+    }
+
+}
+verificarResumo();
