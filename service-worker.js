@@ -1,11 +1,12 @@
-const CACHE_NAME = "gerador-desdobramentos-v1";
+const CACHE_NAME = "gerador-desdobramentos-v2";
 
 const arquivos = [
   "./",
   "./index.html",
   "./style.css",
   "./script.js",
-  "./manifest.json"
+  "./manifest.json",
+  "./assets/images/background.png"
 ];
 
 
@@ -32,7 +33,8 @@ self.addEventListener("fetch", evento => {
     caches.match(evento.request)
     .then(resposta => {
 
-      return resposta || fetch(evento.request);
+      return resposta || fetch(evento.request)
+      .catch(() => caches.match("./index.html"));
 
     })
 
