@@ -2,6 +2,7 @@
   "name": "Gerador de Desdobramentos",
   "short_name": "Desdobramentos",
   "description": "Gerador de combinações de placares",
+  "id": "/",
   "start_url": "./",
   "display": "standalone",
   "background_color": "#151515",
