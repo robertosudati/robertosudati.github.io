@@ -22,12 +22,10 @@ body {
 h1{
 
     text-align:center;
-    margin-bottom:30px;
+    margin-bottom:0;
     color:white;
     background:#0d0d0f;
     padding:15px;
-    
-    
 
 }
 
@@ -348,4 +346,53 @@ label{
     
 }
 
+/* MENU PRINCIPAL */
 
+/* MENU PRINCIPAL */
+
+.menu {
+
+    width:100%;
+    background:#0d0d0f;
+    border-top:1px solid #3b5875;
+    border-bottom:1px solid #3b5875;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    gap:0;
+
+}
+
+
+.menu a {
+
+    color:white;
+    text-decoration:none;
+
+    padding:15px 35px;
+
+    font-size:16px;
+    font-weight:bold;
+
+    border-right:1px solid #333;
+
+    transition:.3s;
+
+}
+
+
+.menu a:first-child {
+
+    border-left:1px solid #333;
+
+}
+
+
+.menu a:hover {
+
+    background:#1f3b5b;
+    color:white;
+
+}
