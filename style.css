@@ -1,311 +1,1077 @@
+/* =====================================================
+   SUDATI LABS
+   GERADOR DE DESDOBRAMENTOS
+   STYLE.CSS
+===================================================== */
+
+/* =========================
+   RESET
+========================= */
+
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:Arial, Helvetica, sans-serif;
 }
 
-body {
-
-    margin:0;
-    text-align:center;
-    color:white;
-    background:
-    linear-gradient(rgba(0,0,0,.70), rgba(0,0,0,.70)),
-    url("assets/images/background.png");
-    background-size:cover;
-    background-position:center;
-    background-attachment:fixed;
-
+html{
+    scroll-behavior:smooth;
 }
 
-h1{
-
-    text-align:center;
-    margin-bottom:0;
-    color:white;
-    background:#0d0d0f;
-    padding:15px;
-
-}
-
-
-h1 span{
-
-    display:block;
-    font-size:18px;
-    font-weight:normal;
-    margin-top:8px;
-    color:#b8cce4;
-    font-style:italic;
-
-}
-
-button{
-
-    background:#1f3b5b;
-    color:white;
-    border:1px solid #3b5875;
-    padding:12px 20px;
-    border-radius:8px;
-    cursor:pointer;
-    font-size:16px;
-    font-weight:bold;
-    margin-top:15px;
-    margin-bottom:15px;
+body{
+    font-family:Poppins,sans-serif;
+    background:#000;
+    color:#fff;
+    overflow-x:hidden;
     
 }
 
-button:hover{
+/* =========================
+   HEADER
+========================= */
 
-    background:#274d73;
+header{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+
+    padding:25px 8%;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    z-index:999;
+
+    transition:.35s;
 
 }
 
+header.scrolled{
+
+    background:#000;
+    backdrop-filter:blur(10px);
+    box-shadow:0 10px 30px rgba(0,0,0,.4);
+
+}
+
+.logo{
+
+    font-size:30px;
+    font-weight:700;
+    color:#4ba6db;
+
+}
+
+nav{
+
+    display:flex;
+    gap:35px;
+
+}
+
+nav a{
+
+    text-decoration:none;
+    color:#fff;
+
+    font-weight:600;
+
+    transition:.25s;
+
+}
+
+nav a:hover{
+
+    color:#4ba6db;
+
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+
+    min-height:100vh;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:space-between;
+
+    gap:50px;
+
+    padding:120px 8% 70px;
+
+    background:
+    linear-gradient(135deg,#000 60%,#14213D);
+
+}
+
+.hero-text{
+
+    flex:1;
+
+}
+
+.tag{
+
+    color:#4ba6db;
+
+    letter-spacing:4px;
+
+    font-size:28px;
+
+    font-weight:700;
+
+}
+
+.hero h1{
+
+    font-family:"Bebas Neue",sans-serif;
+
+    font-size:110px;
+
+    line-height:1;
+
+    margin:30px 0;
+
+    letter-spacing:2px;
+
+}
+
+.hero p{
+
+    max-width:750px;
+
+    color:#d7d7d7;
+
+    font-size:24px;
+
+    line-height:1.6;
+
+    margin-bottom:45px;
+
+}
+
+.hero-image{
+
+    flex:1;
+
+    display:flex;
+    justify-content:center;
+
+}
+
+.hero-image img{
+
+    max-width:100%;
+    height:auto;
+    display:block;
+
+}
+
+/* =========================
+   BOTÕES
+========================= */
+
+.btn{
+
+    display:inline-flex;
+
+    justify-content:center;
+    align-items:center;
+
+    padding:16px 38px;
+
+    background:#4ba6db;
+
+    color:#000;
+
+    text-decoration:none;
+
+    border:none;
+
+    border-radius:50px;
+
+    font-size:17px;
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+.btn:hover{
+
+    transform:translateY(-3px);
+
+    background:#62b8eb;
+
+}
+
+/* =========================
+   SEÇÕES
+========================= */
+
+section{
+
+    padding:120px 8%;
+
+}
+
+.titulo{
+
+    width:100%;
+
+    max-width:1600px;
+
+    margin:auto;
+
+    text-align:center;
+
+    padding:0 20px;
+
+}
+
+.titulo span{
+
+    color:#4ba6db;
+
+    font-weight:700;
+
+    letter-spacing:2px;
+
+}
+
+.titulo h2{
+
+    font-family:"Bebas Neue";
+
+    font-size:95px;
+
+    line-height:1;
+
+    margin:20px 0;
+
+    letter-spacing:2px;
+
+}
+
+.titulo p{
+
+    color:#cfcfcf;
+
+    font-size:22px;
+
+    max-width:900px;
+
+    margin:auto;
+
+    line-height:1.6;
+
+}
+
+/* =========================
+   GERADOR
+========================= */
+
+#gerador{
+
+    background:#000;
+
+}
+
+.gerador-area{
+
+    max-width:1700px;
+
+    margin:auto;
+
+}
+
+.gerador-botoes{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+
+    margin:45px auto;
+
+}
+
+.gerador-botoes .btn{
+
+    min-width:260px;
+
+}
+/* =====================================================
+   CARDS DOS JOGOS
+===================================================== */
+
 #listaJogos{
 
-    margin-top:25px;
     display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:20px;
-    max-width:1600px;
-    margin-left:auto;
-    margin-right:auto;
+
+    grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
+
+    gap:25px;
+
+    margin:40px auto;
+
+    width:100%;
 
 }
 
 .card{
 
-    background:#151515;
-    border-radius:10px;
-    padding:20px;
-    border:1px solid #3b5875;
-    width:100%;
-    box-shadow:0 4px 10px rgba(0,0,0,0.4);
+    background:#14213D;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:20px;
+
+    padding:25px;
+
+    box-shadow:0 12px 35px rgba(0,0,0,.35);
 
 }
 
 .card h3{
 
-    margin-bottom:15px;
-    background:#1f3b5b;
-    color:white;
-    padding:10px;
-    border-radius:8px;
+    background:#4ba6db;
+
+    color:#000;
+
     text-align:center;
+
+    padding:14px;
+
+    border-radius:12px;
+
+    margin-bottom:25px;
+
+    font-size:22px;
 
 }
 
-input{
+.times{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:20px;
+
+}
+
+.time{
+
+    background:#111827;
+
+    border:1px solid #2b3d55;
+
+    border-radius:15px;
+
+    padding:18px;
+
+}
+
+.time label{
+
+    display:block;
+
+    color:#4ba6db;
+
+    margin-bottom:8px;
+
+    font-weight:700;
+
+}
+
+.time input{
 
     width:100%;
-    padding:10px;
-    margin-top:6px;
-    margin-bottom:15px;
-    border-radius:6px;
-    border:1px solid #3b5875;
-    background:#1c1c1c;
-    color:white;
-    font-size:16px;
+
+    padding:12px;
+
+    margin-bottom:18px;
+
+    background:#000;
+
+    color:#fff;
+
+    border:1px solid #444;
+
+    border-radius:10px;
+
+    outline:none;
+
+    transition:.25s;
 
 }
 
-#resultado{
+.time input:focus{
 
-    margin-top:30px;
+    border-color:#4ba6db;
+
+    box-shadow:0 0 10px rgba(75,166,219,.3);
+
 }
 
-.combinacao{
+/* =====================================================
+   BOTÃO EXCLUIR PLACARES
+===================================================== */
 
-    background:#1b1b1b;
-    border-left:4px solid #00d26a;
+.abrirFiltros{
+
+    width:100%;
+
+    margin-top:25px;
+
     padding:15px;
-    margin-bottom:15px;
-    border-radius:8px;
-}
-.remover{
-    background:#d63031;
-    margin-top:15px;
 
-}
-
-.remover:hover{
-
-    background:#b71c1c;
-
-}
-
-hr{
-
-    margin:20px 0;
     border:none;
-    border-top:1px solid #333;
 
-}
+    border-radius:14px;
 
-h4{
+    background:#4ba6db;
 
-    color:#00d26a;
-    margin-bottom:15px;
-    border-left:4px solid #00d26a;
-    padding-left:10px;
-
-}
-
-input[type=number]{
-
-    width:120px;
-
-}
-
-.combinacao table {
-
-    border-radius: 8px;
-
-}
-
-table {
-
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-    background: #151515;
-    color: #ffffff;
-    font-size: 15px;
-    border-radius: 10px;
-    overflow: hidden;
-
-}
-
-th {
-
-    background: #1f3b5b;
-    color: white;
-    padding: 12px;
-    border: 1px solid #3b5875;
-    text-align: center;
-
-}
-
-td {
-
-    padding: 12px;
-    border: 1px solid #333;
-    text-align: center;
-
-}
-
-tr:nth-child(even) {
-
-    background: #1c1c1c;
-
-}
-
-tr:hover {
-
-    background: #26384d;
-
-}
-
-#total,
-#resumoFiltros{
+    color:#000;
 
     font-size:18px;
-    color:white;
-    line-height:1.8;
-    font-weight:bold;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.25s;
 
 }
 
-#total{
+.abrirFiltros:hover{
 
-    margin-bottom:10px;
+    background:#62b8eb;
 
-}
-
-#resumoFiltros{
-
-    margin-top:10px;
+    transform:translateY(-2px);
 
 }
 
-#resumoFiltros{
+/* =====================================================
+   ÁREA DOS FILTROS
+===================================================== */
 
-    margin-top:10px;
-    font-weight:bold;
+.areaFiltros{
 
-}
+    display:none;
 
-input[type="checkbox"],
-input[type="radio"]{
+    margin-top:20px;
 
-    width:auto;
-    margin:0;
+    background:#111827;
 
-}
+    border:1px solid rgba(75,166,219,.35);
 
-label{
+    border-radius:18px;
 
-    font-weight:bold;
-    display:flex;
-    align-items:center;
-    gap:8px;
-    margin-bottom:10px;
-
-}
-
-#total,
-#resumoFiltros,
-.filtros{
-
-    margin-left:auto;
-    margin-right:auto;
-    max-width:900px;
-
-}
-
-.filtros{
+    padding:25px;
 
     text-align:center;
 
 }
 
-.filtros label{
+.areaFiltros h4{
 
-    display:inline-flex;
-    align-items:center;
-    gap:8px;
-    margin:8px;
+    color:#4ba6db;
+
+    margin-bottom:20px;
+
+    font-size:22px;
 
 }
 
-/* Espaçamento entre áreas de filtros e botões */
+.linha-excluir{
 
-.filtros,
-#listaFiltrosPlacar,
-#resumoFiltros{
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:15px;
+
+    flex-wrap:wrap;
+
+}
+
+.linha-excluir input{
+
+    width:90px;
+
+    height:50px;
+
+    text-align:center;
+
+    font-size:18px;
+
+    background:#000;
+
+    color:#fff;
+
+    border:1px solid #555;
+
+    border-radius:10px;
+
+}
+
+.linha-excluir span{
+
+    font-size:28px;
+
+    font-weight:bold;
+
+    color:#4ba6db;
+
+}
+
+/* =====================================================
+   BOTÃO ADICIONAR FILTRO
+===================================================== */
+
+.adicionarFiltroPlacar{
+
+    background:#4ba6db;
+
+    color:#000;
+
+    border:none;
+
+    border-radius:10px;
+
+    padding:12px 24px;
+
+    font-size:16px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+.adicionarFiltroPlacar:hover{
+
+    background:#62b8eb;
+
+}
+
+/* =====================================================
+   FILTROS ADICIONADOS
+===================================================== */
+
+.listaFiltrosPlacar{
+
+    display:flex;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    gap:15px;
 
     margin-top:25px;
 
 }
 
-#listaFiltrosPlacar{
+.listaFiltrosPlacar p{
 
-    padding:15px;
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    padding:10px 18px;
+
+    background:#1b2534;
+
+    border:1px solid #4ba6db;
+
+    border-radius:50px;
+
+    margin:0;
+
+    font-size:16px;
 
 }
 
-@media(max-width:1200px){
+.listaFiltrosPlacar button{
+
+    background:#d62828;
+
+    color:#fff;
+
+    border:none;
+
+    border-radius:8px;
+
+    padding:8px 14px;
+
+    font-size:14px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+.listaFiltrosPlacar button:hover{
+
+    background:#ef4444;
+
+}
+
+/* =====================================================
+   REMOVER JOGO
+===================================================== */
+
+.remover{
+
+    width:100%;
+
+    margin-top:25px;
+
+    padding:16px;
+
+    background:#d62828;
+
+    color:#fff;
+
+    border:none;
+
+    border-radius:14px;
+
+    font-size:18px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+.remover:hover{
+
+    background:#ef4444;
+
+    transform:translateY(-2px);
+
+}
+
+/* =====================================================
+   RESUMO
+===================================================== */
+
+#painelResumo{
+
+    max-width:1200px;
+
+    margin:50px auto;
+
+    background:#14213D;
+
+    border-radius:20px;
+
+    padding:30px;
+
+    border:1px solid rgba(255,255,255,.08);
+
+}
+
+.resumoCabecalho{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:flex-start;
+
+    gap:30px;
+
+    flex-wrap:wrap;
+
+}
+
+.resumoInfo{
+
+    flex:1;
+
+}
+
+#total{
+
+    font-size:28px;
+
+    font-weight:700;
+
+    color:#4ba6db;
+
+    margin-bottom:15px;
+
+}
+
+#resumoFiltros{
+
+    line-height:1.8;
+
+}
+
+.btnExportar{
+
+    padding:15px 28px;
+
+    border:none;
+
+    border-radius:14px;
+
+    background:#4ba6db;
+
+    color:#000;
+
+    font-size:17px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+.btnExportar:hover{
+
+    background:#62b8eb;
+
+    transform:translateY(-2px);
+
+}
+/* =====================================================
+   RESULTADOS
+===================================================== */
+
+#resultado{
+
+    width:100%;
+
+    max-width:1700px;
+
+    margin:50px auto;
+
+    background:#111;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:20px;
+
+    padding:20px;
+
+    overflow-x:auto;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.45);
+
+}
+
+#resultado table{
+
+    width:100%;
+
+    min-width:1000px;
+
+    border-collapse:collapse;
+
+    overflow:hidden;
+
+    border-radius:15px;
+
+}
+
+#resultado th{
+
+    background:#4ba6db;
+
+    color:#000;
+
+    padding:16px;
+
+    text-align:center;
+
+    font-size:15px;
+
+    font-weight:700;
+
+}
+
+#resultado td{
+
+    padding:15px;
+
+    text-align:center;
+
+    color:#fff;
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+
+    font-size:15px;
+
+}
+
+#resultado tr:nth-child(odd){
+
+    background:#101010;
+
+}
+
+#resultado tr:nth-child(even){
+
+    background:#181818;
+
+}
+
+#resultado tr:hover{
+
+    background:#1d3557;
+
+}
+
+#resultado td:first-child{
+
+    width:80px;
+
+    color:#4ba6db;
+
+    font-weight:700;
+
+}
+
+/* =====================================================
+   PAGINAÇÃO
+===================================================== */
+
+.paginacao{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:25px;
+
+    flex-wrap:wrap;
+
+    margin-top:30px;
+
+}
+
+.paginacao span{
+
+    font-size:18px;
+
+    font-weight:600;
+
+    color:#fff;
+
+}
+
+.paginacao button{
+
+    background:#4ba6db;
+
+    color:#000;
+
+    border:none;
+
+    border-radius:50px;
+
+    padding:12px 28px;
+
+    font-size:16px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+.paginacao button:hover{
+
+    background:#62b8eb;
+
+    transform:translateY(-2px);
+
+}
+
+/* =====================================================
+   BRASILEIRÃO
+===================================================== */
+
+#brasileirao{
+
+    background:#14213D;
+
+}
+
+/* =====================================================
+   PRÓXIMA RODADA
+===================================================== */
+
+#rodada{
+
+    background:#111;
+
+}
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer{
+
+    background:#000;
+
+    padding:45px 20px;
+
+    text-align:center;
+
+    border-top:1px solid rgba(255,255,255,.08);
+
+}
+
+footer p{
+
+    color:#bbb;
+
+    font-size:15px;
+
+}
+/* =====================================================
+   RESPONSIVIDADE
+===================================================== */
+
+/* ---------- Desktop Grande ---------- */
+
+
+
+/* ---------- Notebook ---------- */
+
+@media (max-width:1200px){
+
+    .hero{
+
+        gap:30px;
+
+    }
+
+    .hero h1{
+
+        font-size:72px;
+        line-height:70px;
+
+    }
 
     #listaJogos{
 
-        grid-template-columns:repeat(3, 1fr);
+        grid-template-columns:repeat(2,1fr);
 
     }
 
 }
 
-@media(max-width:700px){
+/* ---------- Tablet ---------- */
+
+@media (max-width:900px){
+        #jogos{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+    header{
+
+        flex-direction:column;
+
+        gap:20px;
+
+        padding:20px;
+
+    }
+
+    nav{
+
+        flex-wrap:wrap;
+
+        justify-content:center;
+
+        gap:20px;
+
+    }
+
+    .hero{
+
+        flex-direction:column;
+
+        text-align:center;
+
+        padding:150px 30px 70px;
+
+    }
+
+    .hero-text{
+
+        width:100%;
+
+    }
+
+    .hero p{
+
+        margin:auto auto 35px;
+
+    }
+
+    .hero-image{
+
+        width:100%;
+
+    }
+
+    .hero-image img{
+
+        max-width:450px;
+
+    }
+
+    .titulo h2{
+
+        font-size:55px;
+
+    }
 
     #listaJogos{
 
@@ -313,86 +1079,537 @@ label{
 
     }
 
+    .times{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .resumoCabecalho{
+
+        flex-direction:column;
+
+        align-items:center;
+
+        text-align:center;
+
+    }
+
+    .btnExportar{
+
+        width:100%;
+
+        max-width:320px;
+
+    }
+
+    #resultado table{
+
+        min-width:900px;
+
+    }
+
+}
+#gerador .titulo span{
+    font-size:30px !important;
 }
 
-.linha-gols{
+#gerador .titulo h2{
+    font-size:100px !important;
+}
+
+#gerador .titulo p{
+    font-size:24px !important;
+}
+
+/* ---------- Celular ---------- */
+
+@media (max-width:600px){
+
+        #jogos{
+
+        grid-template-columns:1fr;
+
+    }
+
+    section{
+
+        padding:90px 20px;
+
+    }
+
+    .hero{
+
+        padding:140px 20px 60px;
+
+    }
+
+    .hero h1{
+
+        font-size:48px;
+
+        line-height:48px;
+
+    }
+
+    .hero p{
+
+        font-size:16px;
+
+    }
+
+    .btn{
+
+        width:100%;
+
+    }
+
+    .gerador-botoes{
+
+        flex-direction:column;
+
+    }
+
+    .gerador-botoes .btn{
+
+        width:100%;
+
+        min-width:100%;
+
+    }
+
+    .card{
+
+        padding:18px;
+
+    }
+
+    .linha-excluir{
+
+        flex-direction:column;
+
+    }
+
+    .linha-excluir input{
+
+        width:100%;
+
+    }
+
+    .adicionarFiltroPlacar{
+
+        width:100%;
+
+    }
+
+    .listaFiltrosPlacar{
+
+        flex-direction:column;
+
+        align-items:center;
+
+    }
+
+    .listaFiltrosPlacar p{
+
+        width:100%;
+
+        justify-content:space-between;
+
+    }
+
+    .remover{
+
+        width:100%;
+
+    }
+
+    #painelResumo{
+
+        padding:20px;
+
+    }
+
+    #total{
+
+        font-size:22px;
+
+    }
+
+    #resultado{
+
+        padding:12px;
+
+    }
+
+    .paginacao{
+
+        flex-direction:column;
+
+        gap:15px;
+
+    }
+
+    .paginacao button{
+
+        width:100%;
+
+    }
+    #gerador .titulo span{
+
+    font-size:22px;
+
+}
+
+
+#gerador .titulo h2{
+
+    font-size:55px;
+
+}
+
+
+#gerador .titulo p{
+
+    font-size:16px;
+
+}
+#gerador .titulo span{
+
+    font-size:22px;
+
+}
+
+
+#gerador .titulo h2{
+
+    font-size:55px;
+
+}
+
+
+#gerador .titulo p{
+
+    font-size:16px;
+
+}
+
+}
+.tabela-container{
+
+    width:100%;
+
+    max-width:1400px;
+
+    margin:50px auto;
+
+    background:#111827;
+
+    border-radius:20px;
+
+    padding:25px;
+
+    overflow-x:auto;
+
+}
+
+
+.tabela-container table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+}
+
+
+.tabela-container th{
+
+    background:#4ba6db;
+
+    color:#000;
+
+    padding:15px;
+
+}
+
+
+.tabela-container td{
+
+    padding:15px;
+
+    text-align:center;
+
+    border-bottom:1px solid rgba(255,255,255,.1);
+
+}
+
+
+.time{
 
     display:flex;
+
+    align-items:center;
+
     gap:15px;
+
+    text-align:left;
 
 }
 
-.linha-gols div{
+
+.time img{
+
+    width:35px;
+
+    height:35px;
+
+    object-fit:contain;
+
+}
+#brasileirao .titulo span{
+
+    font-size:30px;
+
+}
+
+
+#brasileirao .titulo h2{
+
+    font-size:100px;
+
+    line-height:0.95;
+
+    margin:20px 0;
+
+}
+
+
+#brasileirao .titulo p{
+
+    font-size:24px;
+
+    max-width:900px;
+
+    margin:auto;
+
+}
+#jogos{
+
+    width:100%;
+
+    max-width:1400px;
+
+    margin:60px auto;
+
+    display:grid;
+
+    grid-template-columns:repeat(4, minmax(0,1fr));
+
+    gap:25px;
+
+}
+
+
+.jogo{
+
+    background:#14213D;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:20px;
+
+    padding:25px;
+
+    text-align:center;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.35);
+
+}
+
+
+.times-jogo{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:25px;
+
+}
+
+
+.times-jogo div{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    gap:10px;
 
     flex:1;
 
 }
 
-.linha-gols input{
 
-    width:100%;
+.times-jogo img{
 
-}
+    width:55px;
 
-.cardResumo{
+    height:55px;
 
-    max-width:900px;
-    margin:25px auto;
-    padding:20px;
-    background:rgba(0,0,0,.65);
-    border:1px solid #3b5875;
-    border-radius:12px;
-    text-align:left;
-    
-}
-
-/* MENU PRINCIPAL */
-
-/* MENU PRINCIPAL */
-
-.menu {
-
-    width:100%;
-    background:#0d0d0f;
-    border-top:1px solid #3b5875;
-    border-bottom:1px solid #3b5875;
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
-    gap:0;
+    object-fit:contain;
 
 }
 
 
-.menu a {
+.times-jogo span{
 
-    color:white;
-    text-decoration:none;
+    font-size:25px;
 
-    padding:15px 35px;
-
-    font-size:16px;
     font-weight:bold;
 
-    border-right:1px solid #333;
+    color:#4ba6db;
 
-    transition:.3s;
+}
+#rodada .titulo span{
+
+    font-size:30px;
 
 }
 
 
-.menu a:first-child {
+#rodada .titulo h2{
 
-    border-left:1px solid #333;
+    font-size:100px;
+
+    line-height:.95;
+
+}
+
+
+#rodada .titulo p{
+
+    font-size:24px;
+
+}
+.jogo{
+
+    background:#14213D;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:20px;
+
+    padding:25px;
+
+    text-align:center;
+
+    min-height:230px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:space-between;
 
 }
 
 
-.menu a:hover {
+.data-jogo{
 
-    background:#1f3b5b;
-    color:white;
+    margin-top:auto;
+
+    padding-top:20px;
+
+    border-top:1px solid rgba(255,255,255,.15);
+
+    color:#d7d7d7;
+
+    font-size:16px;
 
 }
+
+.paginacao{
+
+    display:flex !important;
+
+    flex-direction:row !important;
+
+    justify-content:center !important;
+
+    align-items:center !important;
+
+    gap:25px !important;
+
+    flex-wrap:nowrap !important;
+
+}
+
+
+.paginacao button{
+
+    width:auto !important;
+
+    min-width:140px;
+
+}
+@media(max-width:1200px){
+
+    #jogos{
+
+        grid-template-columns:repeat(2, minmax(0,1fr));
+
+    }
+
+}
+
+
+@media(max-width:700px){
+
+    #jogos{
+
+        grid-template-columns:1fr;
+
+        padding:0;
+
+    }
+
+}
+.jogo{
+
+    width:100%;
+
+    min-width:0;
+
+    background:#14213D;
+
+    border-radius:20px;
+
+    padding:25px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:space-between;
+
+}
+.times-jogo strong{
+
+    font-size:15px;
+
+    text-align:center;
+
+    max-width:120px;
+
+    overflow:hidden;
+
+    text-overflow:ellipsis;
+
+}
+
