@@ -1,44 +1,283 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gerador de Desdobramentos</title>
+
+    <title>Sudati Labs | Gerador de Desdobramentos</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3853112358362256"
-     crossorigin="anonymous"></script>
 </head>
+
 <body>
-  <h1>
-    Gerador de Desdobramentos
-    <span>Entre Razões e Emoções</span>
+
+<header>
+
+    <div class="logo">
+        SUDATI LABS
+    </div>
+
+    <nav>
+
+        <a href="#inicio">Início</a>
+
+        <a href="#gerador">Gerador</a>
+
+        <a href="#brasileirao">Tabela Série A</a>
+
+        <a href="#rodada">Próxima Rodada</a>
+
+    </nav>
+
+</header>
+
+
+<section id="inicio" class="hero">
+
+<div class="hero-text">
+
+<span class="tag">
+GERADOR DE DESDOBRAMENTOS
+</span>
+
+<h1>
+
+Crie milhares de
+combinações
+em segundos.
+
 </h1>
-<nav class="menu">
 
-    <a href="index.html">🏠 Início</a>
+<p>
 
-    <a href="brasileirao.html">🏆 Brasileirão</a>
+Monte seus jogos, aplique filtros
+e gere todas as possibilidades
+automaticamente.
 
-</nav>
-    <button id="adicionarJogo">
-        + Adicionar Jogo
-    </button>
-    <div id="listaJogos"></div>
-    <button id="gerar">
-        Gerar Combinações
-    </button>
-<div id="painelResumo" class="cardResumo">
-    <div id="total"></div>
-    <div id="resumoFiltros"></div>
+</p>
+
+<a href="#gerador" class="btn">
+
+COMEÇAR AGORA
+
+</a>
+
 </div>
-        <button id="exportarPDF">
-📄 Exportar PDF
+
+
+<div class="hero-image">
+
+<img src="assets/images/img6.png">
+
+</div>
+
+</section>
+
+
+
+<section id="gerador">
+
+
+<div class="titulo">
+
+<span>
+GERADOR
+</span>
+
+
+<h2>
+Crie suas combinações
+</h2>
+
+
+<p>
+Configure seus jogos, aplique filtros e gere milhares de possibilidades.
+</p>
+
+
+</div>
+
+
+
+<div class="gerador-area">
+
+
+<div class="gerador-botoes">
+
+
+<button id="adicionarJogo" class="btn">
+
++ Adicionar Jogo
+
 </button>
-    <hr>
-    <div id="resultado"></div>
+
+
+<button id="gerar" class="btn">
+
+⚡ Gerar Combinações
+
+</button>
+
+
+
+</div>
+
+
+
+<div id="listaJogos">
+
+</div>
+
+
+
+<div id="painelResumo" class="cardResumo">
+
+    <div class="resumoCabecalho">
+
+        <div class="resumoInfo">
+
+            <div id="total"></div>
+
+            <div id="resumoFiltros"></div>
+
+        </div>
+
+        <button id="exportarPDF" class="btnExportar">
+
+            📄 Exportar PDF
+
+        </button>
+
+    </div>
+
+</div>
+
+
+</div>
+
+
+
+<div id="resultado">
+
+
+</div>
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+<section id="brasileirao">
+
+    <div class="titulo">
+
+        <span>CAMPEONATO BRASILEIRO</span>
+
+        <h2>Tabela do Brasileirão Série A</h2>
+
+        <p>
+            Acompanhe a classificação atualizada do campeonato.
+        </p>
+
+    </div>
+
+
+    <div class="tabela-container">
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>#</th>
+
+                    <th>Time</th>
+
+                    <th>P</th>
+
+                    <th>J</th>
+
+                    <th>V</th>
+
+                    <th>E</th>
+
+                    <th>D</th>
+
+                </tr>
+
+            </thead>
+
+
+            <tbody id="tabela">
+
+            </tbody>
+
+
+        </table>
+
+    </div>
+
+
+</section>
+
+
+
+<section id="rodada">
+
+    <div class="titulo">
+
+        <span>CAMPEONATO BRASILEIRO</span>
+
+        <h2>Próxima Rodada</h2>
+
+        <p>
+            Confira os próximos jogos do Brasileirão Série A.
+        </p>
+
+    </div>
+
+
+    <div id="jogos">
+
+        <!-- API irá carregar os jogos aqui -->
+
+    </div>
+
+
+</section>
+
+
+<footer>
+
+<p>
+
+© 2026 Sudati Labs
+
+</p>
+
+</footer>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.2/jspdf.plugin.autotable.min.js"></script>
+
 <script src="script.js"></script>
+
+<script src="script.js"></script>
+<script src="brasileirao.js"></script>
+
+
 </body>
 </html>
