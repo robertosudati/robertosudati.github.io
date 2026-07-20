@@ -1,4 +1,4 @@
-const CACHE_NAME = "gerador-desdobramentos-v3";
+const CACHE_NAME = "gerador-desdobramentos-v4";
 
 const arquivos = [
   "./",
