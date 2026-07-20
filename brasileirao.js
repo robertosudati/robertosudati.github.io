@@ -2,7 +2,7 @@ const API = "https://sudati-api.robertosudatii.workers.dev";
 
 let todosJogos = [];
 let paginaJogos = 1;
-const jogosPorPagina = 10;
+const jogosPorPagina = 8;
 
 // ===== TABELA =====
 
@@ -133,7 +133,11 @@ function mostrarJogos() {
         <br>
 
 
-        ${new Date(jogo.utcDate).toLocaleString("pt-BR")}
+        <div class="data-jogo">
+
+${new Date(jogo.utcDate).toLocaleString("pt-BR")}
+
+</div>
 
 
     </div>
