@@ -1,8 +1,9 @@
+console.log("JS carregou");
 let contadorJogos = 0;
 let paginaAtual = 1;
-const porPagina = 50;
+const porPagina = 20;
 let todasCombinacoes = [];
-let filtrosPlacares = [];
+
 
 
 const listaJogos = document.getElementById("listaJogos");
@@ -24,44 +25,44 @@ function adicionarJogo() {
 
         <h3>⚽ Jogo ${contadorJogos}</h3>
 
+<div class="times">
+
+    <div class="time">
+
         <label>Time da Casa</label>
-        <input type="text" class="casa" placeholder="Ex: França">
+
+        <input
+        type="text"
+        class="casa"
+        placeholder="Ex: França">
+
+        <label>Total de gols</label>
+
+        <input
+        type="number"
+        class="maxCasa"
+        value="0"
+        min="0">
+
+    </div>
+
+    <div class="time">
 
         <label>Time Visitante</label>
-        <input type="text" class="visitante" placeholder="Ex: Brasil">
 
-        <hr>
+        <input
+        type="text"
+        class="visitante"
+        placeholder="Ex: Brasil">
 
-        <h4>Gols Time da Casa</h4>
+        <label>Total de gols</label>
 
-        <div class="linha-gols">
+        <input
+        type="number"
+        class="maxVisitante"
+        value="0"
+        min="0">
 
-    <div>
-        <label>Mínimo</label>
-        <input type="number" class="minCasa" value="" min="0">
-    </div>
-
-    <div>
-        <label>Máximo</label>
-        <input type="number" class="maxCasa" value="" min="0">
-    </div>
-
-</div>
-
-        <hr>
-
-        <h4>Gols Time Visitante</h4>
-
-        <div class="linha-gols">
-
-    <div>
-        <label>Mínimo</label>
-        <input type="number" class="minVisitante" value="" min="0">
-    </div>
-
-    <div>
-        <label>Máximo</label>
-        <input type="number" class="maxVisitante" value="" min="0">
     </div>
 
 </div>
@@ -70,81 +71,49 @@ function adicionarJogo() {
         <br><br>
         <hr>
 
-<h4>Filtros do jogo</h4>
-
-<label>
-<input type="checkbox" class="casaNaoPerde">
-<span class="nomeCasaFiltro">Time da casa não perde</span>
-</label>
-
-<br>
-
-<label>
-<input type="checkbox" class="visitanteNaoPerde">
-<span class="nomeVisitanteFiltro">Visitante não perde</span>
-</label>
-<br><br>
-
-<h4>Ambos marcam</h4>
-
-<label>
-<input type="radio" 
-name="ambosMarcam${contadorJogos}" 
-class="ambosMarcam" 
-value="semfiltro"
-checked>
-
-Sem filtro
-</label>
-
-<br>
-
-<label>
-<input type="radio" 
-name="ambosMarcam${contadorJogos}" 
-class="ambosMarcam" 
-value="sim">
-
-Sim
-</label>
-
-<br>
-
-<label>
-<input type="radio" 
-name="ambosMarcam${contadorJogos}" 
-class="ambosMarcam" 
-value="nao">
-
-Não
-</label>
-<br><br>
-<hr>
-
-<h4>Excluir placares deste jogo</h4>
-
-<input
-type="number"
-class="filtroCasa"
-min="0"
-placeholder="Casa">
-
-x
-
-<input
-type="number"
-class="filtroVisitante"
-min="0"
-placeholder="Visitante">
-
 <button
 type="button"
-class="adicionarFiltroPlacar">
+class="abrirFiltros">
 
-Adicionar
+⚙️ Excluir placares
+
 </button>
 
-<div class="listaFiltrosPlacar"></div>
+<div class="areaFiltros">
+
+    <h4>Placares que não serão gerados</h4>
+
+    <div class="linha-excluir">
+
+        <input
+        type="number"
+        class="filtroCasa"
+        min="0"
+        placeholder="Casa">
+
+        <span>x</span>
+
+        <input
+        type="number"
+        class="filtroVisitante"
+        min="0"
+        placeholder="Visitante">
+
+        <button
+        type="button"
+        class="adicionarFiltroPlacar">
+
+        Adicionar
+
+        </button>
+
+    </div>
+
+    <div class="listaFiltrosPlacar"></div>
+
+</div>
+
+
 
         <button class="remover">
             🗑 Remover Jogo
@@ -159,24 +128,6 @@ const inputCasa = card.querySelector(".casa");
 const inputVisitante = card.querySelector(".visitante");
 card.filtrosPlacares = [];
 
-const nomeCasaFiltro = card.querySelector(".nomeCasaFiltro");
-const nomeVisitanteFiltro = card.querySelector(".nomeVisitanteFiltro");
-
-
-inputCasa.addEventListener("input", function(){
-
-    nomeCasaFiltro.innerHTML =
-    (this.value || "Time da casa") + " não perde";
-
-});
-
-
-inputVisitante.addEventListener("input", function(){
-
-    nomeVisitanteFiltro.innerHTML =
-    (this.value || "Visitante") + " não perde";
-
-});
 card.querySelector(".adicionarFiltroPlacar")
 .addEventListener("click", function(){
 
@@ -200,6 +151,26 @@ card.querySelector(".adicionarFiltroPlacar")
 
 });
     listaJogos.appendChild(card);
+    const btnAbrir = card.querySelector(".abrirFiltros");
+const areaFiltros = card.querySelector(".areaFiltros");
+
+areaFiltros.style.display = "none";
+
+btnAbrir.addEventListener("click", function(){
+
+    if(areaFiltros.style.display === "none"){
+
+        areaFiltros.style.display = "block";
+        btnAbrir.textContent = "▲ Ocultar filtros";
+
+    }else{
+
+        areaFiltros.style.display = "none";
+        btnAbrir.textContent = "⚙️ Excluir placares";
+
+    }
+
+});
 
 }
 document
@@ -225,49 +196,14 @@ function gerarPlacares(){
         const visitante = jogo.querySelector(".visitante").value || "Visitante";
 
 
-        const minCasa = Number(jogo.querySelector(".minCasa").value);
-        const maxCasa = Number(jogo.querySelector(".maxCasa").value);
+const minCasa = 0;
+const maxCasa = Number(jogo.querySelector(".maxCasa").value);
 
-        const minVisitante = Number(jogo.querySelector(".minVisitante").value);
-        const maxVisitante = Number(jogo.querySelector(".maxVisitante").value);
-        const casaNaoPerde =
-jogo.querySelector(".casaNaoPerde").checked;
-
-
-const visitanteNaoPerde =
-jogo.querySelector(".visitanteNaoPerde").checked;
-const ambosMarcam =
-jogo.querySelector(".ambosMarcam:checked")?.value || "semfiltro";
+const minVisitante = 0;
+const maxVisitante = Number(jogo.querySelector(".maxVisitante").value);
 let resumoJogo = "";
 let temFiltro = false;
 
-if(casaNaoPerde){
-
-    resumoJogo += `✓ ${casa} não perde<br>`;
-    temFiltro = true;
-
-}
-
-if(visitanteNaoPerde){
-
-    resumoJogo += `✓ ${visitante} não perde<br>`;
-    temFiltro = true;
-
-}
-
-if(ambosMarcam === "sim"){
-
-    resumoJogo += `✓ Ambos marcam: Sim<br>`;
-    temFiltro = true;
-
-}
-
-if(ambosMarcam === "nao"){
-
-    resumoJogo += `✓ Ambos marcam: Não<br>`;
-    temFiltro = true;
-
-}
 
 if(jogo.filtrosPlacares.length){
 
@@ -304,43 +240,6 @@ for(let gCasa = minCasa; gCasa <= maxCasa; gCasa++){
             continue;
 
         }
-
-
-        if(ambosMarcam === "sim"){
-
-            if(gCasa === 0 || gVisitante === 0){
-
-                continue;
-
-            }
-
-        }
-
-
-        if(ambosMarcam === "nao"){
-
-            if(gCasa > 0 && gVisitante > 0){
-
-                continue;
-
-            }
-
-        }
-
-
-        if(casaNaoPerde && gCasa < gVisitante){
-
-            continue;
-
-        }
-
-
-        if(visitanteNaoPerde && gVisitante < gCasa){
-
-            continue;
-
-        }
-
 
         placaresDoJogo.push({
 
@@ -392,24 +291,7 @@ for(let gCasa = minCasa; gCasa <= maxCasa; gCasa++){
 
     });
 
-let filtros = filtrosPlacares;
 
-if(filtros.length > 0){
-
-    combinacoes = combinacoes.filter(aposta => {
-
-        return !aposta.some(jogo => {
-
-            let placar =
-            jogo.golsCasa + "-" + jogo.golsVisitante;
-
-            return filtros.includes(placar);
-
-        });
-
-    });
-
-}
 document.querySelector("#total").innerHTML = `
 <strong>Total de combinações:</strong> ${combinacoes.length.toLocaleString("pt-BR")}
 `;
@@ -547,79 +429,7 @@ function paginaAnterior(){
     }
 
 }
-const botaoFiltro =
-document.getElementById("adicionarFiltroPlacar");
 
-
-if(botaoFiltro){
-
-    botaoFiltro.addEventListener(
-        "click",
-        adicionarFiltroPlacar
-    );
-
-}
-
-
-function adicionarFiltroPlacar(){
-
-    const casa =
-    document.getElementById("filtroCasa").value;
-
-
-    const visitante =
-    document.getElementById("filtroVisitante").value;
-
-
-    if(casa === "" || visitante === ""){
-        return;
-    }
-
-    const placar = casa + "-" + visitante;
-
-    if(!filtrosPlacares.includes(placar)){
-
-        filtrosPlacares.push(placar);
-
-    }
-
-    mostrarFiltrosPlacares();
-
-}
-function mostrarFiltrosPlacares(){
-
-    const lista =
-    document.getElementById("listaFiltrosPlacar");
-
-
-    lista.innerHTML = "";
-
-    filtrosPlacares.forEach((placar,index)=>{
-
-        lista.innerHTML += `
-
-        <p>
-        ❌ ${placar.replace("-", "x")}
-
-        <button onclick="removerFiltroPlacar(${index})">
-        Remover
-        </button>
-
-        </p>
-
-        `;
-
-    });
-
-}
-
-function removerFiltroPlacar(index){
-
-    filtrosPlacares.splice(index,1);
-
-    mostrarFiltrosPlacares();
-
-}
 document
 .getElementById("exportarPDF")
 .addEventListener("click", exportarPDF);
