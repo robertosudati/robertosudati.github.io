@@ -1,8 +1,9 @@
 /* =====================================================
    SUDATI LABS
    GERADOR DE DESDOBRAMENTOS
-   STYLE.CSS
+   CSS ORGANIZADO
 ===================================================== */
+
 
 /* =========================
    RESET
@@ -19,12 +20,14 @@ html{
 }
 
 body{
+
     font-family:Poppins,sans-serif;
     background:#000;
     color:#fff;
     overflow-x:hidden;
-    
+
 }
+
 
 /* =========================
    HEADER
@@ -33,7 +36,6 @@ body{
 header{
 
     position:fixed;
-
     top:0;
     left:0;
 
@@ -47,17 +49,16 @@ header{
 
     z-index:999;
 
-    transition:.35s;
-
 }
+
 
 header.scrolled{
 
     background:#000;
     backdrop-filter:blur(10px);
-    box-shadow:0 10px 30px rgba(0,0,0,.4);
 
 }
+
 
 .logo{
 
@@ -67,6 +68,7 @@ header.scrolled{
 
 }
 
+
 nav{
 
     display:flex;
@@ -74,22 +76,23 @@ nav{
 
 }
 
+
 nav a{
 
     text-decoration:none;
     color:#fff;
-
     font-weight:600;
 
-    transition:.25s;
-
 }
+
 
 nav a:hover{
 
     color:#4ba6db;
 
 }
+
+
 
 /* =========================
    HERO
@@ -108,16 +111,19 @@ nav a:hover{
 
     padding:120px 8% 70px;
 
+
     background:
     linear-gradient(135deg,#000 60%,#14213D);
 
 }
+
 
 .hero-text{
 
     flex:1;
 
 }
+
 
 .tag{
 
@@ -131,6 +137,7 @@ nav a:hover{
 
 }
 
+
 .hero h1{
 
     font-family:"Bebas Neue",sans-serif;
@@ -141,9 +148,8 @@ nav a:hover{
 
     margin:30px 0;
 
-    letter-spacing:2px;
-
 }
+
 
 .hero p{
 
@@ -159,6 +165,8 @@ nav a:hover{
 
 }
 
+
+
 .hero-image{
 
     flex:1;
@@ -168,17 +176,20 @@ nav a:hover{
 
 }
 
+
 .hero-image img{
 
     max-width:100%;
     height:auto;
-    display:block;
 
 }
+
+
 
 /* =========================
    BOTÕES
 ========================= */
+
 
 .btn{
 
@@ -193,38 +204,37 @@ nav a:hover{
 
     color:#000;
 
-    text-decoration:none;
-
     border:none;
 
     border-radius:50px;
 
     font-size:17px;
+
     font-weight:700;
 
     cursor:pointer;
 
-    transition:.25s;
+    text-decoration:none;
 
 }
 
-.btn:hover{
 
-    transform:translateY(-3px);
+.btn:hover{
 
     background:#62b8eb;
 
 }
-
-/* =========================
+/* =====================================================
    SEÇÕES
-========================= */
+===================================================== */
+
 
 section{
 
     padding:120px 8%;
 
 }
+
 
 .titulo{
 
@@ -236,9 +246,8 @@ section{
 
     text-align:center;
 
-    padding:0 20px;
-
 }
+
 
 .titulo span{
 
@@ -250,9 +259,10 @@ section{
 
 }
 
+
 .titulo h2{
 
-    font-family:"Bebas Neue";
+    font-family:"Bebas Neue",sans-serif;
 
     font-size:95px;
 
@@ -260,9 +270,8 @@ section{
 
     margin:20px 0;
 
-    letter-spacing:2px;
-
 }
+
 
 .titulo p{
 
@@ -278,15 +287,19 @@ section{
 
 }
 
-/* =========================
+
+
+/* =====================================================
    GERADOR
-========================= */
+===================================================== */
+
 
 #gerador{
 
     background:#000;
 
 }
+
 
 .gerador-area{
 
@@ -295,6 +308,8 @@ section{
     margin:auto;
 
 }
+
+
 
 .gerador-botoes{
 
@@ -312,30 +327,42 @@ section{
 
 }
 
+
+
 .gerador-botoes .btn{
 
     min-width:260px;
 
 }
+
+
+
 /* =====================================================
    CARDS DOS JOGOS
 ===================================================== */
+
 
 #listaJogos{
 
     display:grid;
 
-    grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
+    grid-template-columns:repeat(4,minmax(0,1fr));
 
     gap:25px;
 
-    margin:40px auto;
-
     width:100%;
+
+    margin:40px auto;
 
 }
 
-.card{
+
+
+#listaJogos .card{
+
+    width:100%;
+
+    min-width:0;
 
     background:#14213D;
 
@@ -349,7 +376,9 @@ section{
 
 }
 
-.card h3{
+
+
+#listaJogos .card h3{
 
     background:#4ba6db;
 
@@ -367,7 +396,11 @@ section{
 
 }
 
-.times{
+
+
+/* TIMES DO GERADOR */
+
+#listaJogos .times{
 
     display:grid;
 
@@ -377,7 +410,9 @@ section{
 
 }
 
-.time{
+
+
+#listaJogos .time{
 
     background:#111827;
 
@@ -387,9 +422,13 @@ section{
 
     padding:18px;
 
+    width:100%;
+
 }
 
-.time label{
+
+
+#listaJogos .time label{
 
     display:block;
 
@@ -401,7 +440,9 @@ section{
 
 }
 
-.time input{
+
+
+#listaJogos .time input{
 
     width:100%;
 
@@ -417,23 +458,21 @@ section{
 
     border-radius:10px;
 
-    outline:none;
-
-    transition:.25s;
-
 }
 
-.time input:focus{
+
+
+#listaJogos .time input:focus{
 
     border-color:#4ba6db;
 
-    box-shadow:0 0 10px rgba(75,166,219,.3);
+    outline:none;
 
 }
-
 /* =====================================================
-   BOTÃO EXCLUIR PLACARES
+   FILTROS
 ===================================================== */
+
 
 .abrirFiltros{
 
@@ -457,21 +496,9 @@ section{
 
     cursor:pointer;
 
-    transition:.25s;
-
 }
 
-.abrirFiltros:hover{
 
-    background:#62b8eb;
-
-    transform:translateY(-2px);
-
-}
-
-/* =====================================================
-   ÁREA DOS FILTROS
-===================================================== */
 
 .areaFiltros{
 
@@ -491,6 +518,8 @@ section{
 
 }
 
+
+
 .areaFiltros h4{
 
     color:#4ba6db;
@@ -500,6 +529,8 @@ section{
     font-size:22px;
 
 }
+
+
 
 .linha-excluir{
 
@@ -514,6 +545,8 @@ section{
     flex-wrap:wrap;
 
 }
+
+
 
 .linha-excluir input{
 
@@ -535,6 +568,8 @@ section{
 
 }
 
+
+
 .linha-excluir span{
 
     font-size:28px;
@@ -545,9 +580,7 @@ section{
 
 }
 
-/* =====================================================
-   BOTÃO ADICIONAR FILTRO
-===================================================== */
+
 
 .adicionarFiltroPlacar{
 
@@ -567,19 +600,12 @@ section{
 
     cursor:pointer;
 
-    transition:.25s;
-
 }
 
-.adicionarFiltroPlacar:hover{
 
-    background:#62b8eb;
 
-}
+/* LISTA FILTROS */
 
-/* =====================================================
-   FILTROS ADICIONADOS
-===================================================== */
 
 .listaFiltrosPlacar{
 
@@ -594,6 +620,8 @@ section{
     margin-top:25px;
 
 }
+
+
 
 .listaFiltrosPlacar p{
 
@@ -611,11 +639,9 @@ section{
 
     border-radius:50px;
 
-    margin:0;
-
-    font-size:16px;
-
 }
+
+
 
 .listaFiltrosPlacar button{
 
@@ -629,25 +655,16 @@ section{
 
     padding:8px 14px;
 
-    font-size:14px;
-
-    font-weight:700;
-
     cursor:pointer;
 
-    transition:.25s;
-
 }
 
-.listaFiltrosPlacar button:hover{
 
-    background:#ef4444;
-
-}
 
 /* =====================================================
    REMOVER JOGO
 ===================================================== */
+
 
 .remover{
 
@@ -671,21 +688,14 @@ section{
 
     cursor:pointer;
 
-    transition:.25s;
-
 }
 
-.remover:hover{
 
-    background:#ef4444;
-
-    transform:translateY(-2px);
-
-}
 
 /* =====================================================
    RESUMO
 ===================================================== */
+
 
 #painelResumo{
 
@@ -703,6 +713,8 @@ section{
 
 }
 
+
+
 .resumoCabecalho{
 
     display:flex;
@@ -717,11 +729,15 @@ section{
 
 }
 
+
+
 .resumoInfo{
 
     flex:1;
 
 }
+
+
 
 #total{
 
@@ -735,11 +751,15 @@ section{
 
 }
 
+
+
 #resumoFiltros{
 
     line-height:1.8;
 
 }
+
+
 
 .btnExportar{
 
@@ -759,20 +779,11 @@ section{
 
     cursor:pointer;
 
-    transition:.25s;
-
-}
-
-.btnExportar:hover{
-
-    background:#62b8eb;
-
-    transform:translateY(-2px);
-
 }
 /* =====================================================
    RESULTADOS
 ===================================================== */
+
 
 #resultado{
 
@@ -792,9 +803,9 @@ section{
 
     overflow-x:auto;
 
-    box-shadow:0 15px 40px rgba(0,0,0,.45);
-
 }
+
+
 
 #resultado table{
 
@@ -804,11 +815,9 @@ section{
 
     border-collapse:collapse;
 
-    overflow:hidden;
-
-    border-radius:15px;
-
 }
+
+
 
 #resultado th{
 
@@ -820,11 +829,9 @@ section{
 
     text-align:center;
 
-    font-size:15px;
-
-    font-weight:700;
-
 }
+
+
 
 #resultado td{
 
@@ -832,13 +839,11 @@ section{
 
     text-align:center;
 
-    color:#fff;
-
     border-bottom:1px solid rgba(255,255,255,.08);
 
-    font-size:15px;
-
 }
+
+
 
 #resultado tr:nth-child(odd){
 
@@ -846,31 +851,20 @@ section{
 
 }
 
+
+
 #resultado tr:nth-child(even){
 
     background:#181818;
 
 }
 
-#resultado tr:hover{
 
-    background:#1d3557;
-
-}
-
-#resultado td:first-child{
-
-    width:80px;
-
-    color:#4ba6db;
-
-    font-weight:700;
-
-}
 
 /* =====================================================
    PAGINAÇÃO
 ===================================================== */
+
 
 .paginacao{
 
@@ -888,15 +882,7 @@ section{
 
 }
 
-.paginacao span{
 
-    font-size:18px;
-
-    font-weight:600;
-
-    color:#fff;
-
-}
 
 .paginacao button{
 
@@ -916,21 +902,14 @@ section{
 
     cursor:pointer;
 
-    transition:.25s;
-
 }
 
-.paginacao button:hover{
 
-    background:#62b8eb;
-
-    transform:translateY(-2px);
-
-}
 
 /* =====================================================
    BRASILEIRÃO
 ===================================================== */
+
 
 #brasileirao{
 
@@ -938,363 +917,8 @@ section{
 
 }
 
-/* =====================================================
-   PRÓXIMA RODADA
-===================================================== */
 
-#rodada{
 
-    background:#111;
-
-}
-
-/* =====================================================
-   FOOTER
-===================================================== */
-
-footer{
-
-    background:#000;
-
-    padding:45px 20px;
-
-    text-align:center;
-
-    border-top:1px solid rgba(255,255,255,.08);
-
-}
-
-footer p{
-
-    color:#bbb;
-
-    font-size:15px;
-
-}
-/* =====================================================
-   RESPONSIVIDADE
-===================================================== */
-
-/* ---------- Desktop Grande ---------- */
-
-
-
-/* ---------- Notebook ---------- */
-
-@media (max-width:1200px){
-
-    .hero{
-
-        gap:30px;
-
-    }
-
-    .hero h1{
-
-        font-size:72px;
-        line-height:70px;
-
-    }
-
-    #listaJogos{
-
-        grid-template-columns:repeat(2,1fr);
-
-    }
-
-}
-
-/* ---------- Tablet ---------- */
-
-@media (max-width:900px){
-        #jogos{
-
-        grid-template-columns:repeat(2,1fr);
-
-    }
-
-    header{
-
-        flex-direction:column;
-
-        gap:20px;
-
-        padding:20px;
-
-    }
-
-    nav{
-
-        flex-wrap:wrap;
-
-        justify-content:center;
-
-        gap:20px;
-
-    }
-
-    .hero{
-
-        flex-direction:column;
-
-        text-align:center;
-
-        padding:150px 30px 70px;
-
-    }
-
-    .hero-text{
-
-        width:100%;
-
-    }
-
-    .hero p{
-
-        margin:auto auto 35px;
-
-    }
-
-    .hero-image{
-
-        width:100%;
-
-    }
-
-    .hero-image img{
-
-        max-width:450px;
-
-    }
-
-    .titulo h2{
-
-        font-size:55px;
-
-    }
-
-    #listaJogos{
-
-        grid-template-columns:1fr;
-
-    }
-
-    .times{
-
-        grid-template-columns:1fr;
-
-    }
-
-    .resumoCabecalho{
-
-        flex-direction:column;
-
-        align-items:center;
-
-        text-align:center;
-
-    }
-
-    .btnExportar{
-
-        width:100%;
-
-        max-width:320px;
-
-    }
-
-    #resultado table{
-
-        min-width:900px;
-
-    }
-
-}
-#gerador .titulo span{
-    font-size:30px !important;
-}
-
-#gerador .titulo h2{
-    font-size:100px !important;
-}
-
-#gerador .titulo p{
-    font-size:24px !important;
-}
-
-/* ---------- Celular ---------- */
-
-@media (max-width:600px){
-
-        #jogos{
-
-        grid-template-columns:1fr;
-
-    }
-
-    section{
-
-        padding:90px 20px;
-
-    }
-
-    .hero{
-
-        padding:140px 20px 60px;
-
-    }
-
-    .hero h1{
-
-        font-size:48px;
-
-        line-height:48px;
-
-    }
-
-    .hero p{
-
-        font-size:16px;
-
-    }
-
-    .btn{
-
-        width:100%;
-
-    }
-
-    .gerador-botoes{
-
-        flex-direction:column;
-
-    }
-
-    .gerador-botoes .btn{
-
-        width:100%;
-
-        min-width:100%;
-
-    }
-
-    .card{
-
-        padding:18px;
-
-    }
-
-    .linha-excluir{
-
-        flex-direction:column;
-
-    }
-
-    .linha-excluir input{
-
-        width:100%;
-
-    }
-
-    .adicionarFiltroPlacar{
-
-        width:100%;
-
-    }
-
-    .listaFiltrosPlacar{
-
-        flex-direction:column;
-
-        align-items:center;
-
-    }
-
-    .listaFiltrosPlacar p{
-
-        width:100%;
-
-        justify-content:space-between;
-
-    }
-
-    .remover{
-
-        width:100%;
-
-    }
-
-    #painelResumo{
-
-        padding:20px;
-
-    }
-
-    #total{
-
-        font-size:22px;
-
-    }
-
-    #resultado{
-
-        padding:12px;
-
-    }
-
-    .paginacao{
-
-        flex-direction:column;
-
-        gap:15px;
-
-    }
-
-    .paginacao button{
-
-        width:100%;
-
-    }
-    #gerador .titulo span{
-
-    font-size:22px;
-
-}
-
-
-#gerador .titulo h2{
-
-    font-size:55px;
-
-}
-
-
-#gerador .titulo p{
-
-    font-size:16px;
-
-}
-#gerador .titulo span{
-
-    font-size:22px;
-
-}
-
-
-#gerador .titulo h2{
-
-    font-size:55px;
-
-}
-
-
-#gerador .titulo p{
-
-    font-size:16px;
-
-}
-
-}
 .tabela-container{
 
     width:100%;
@@ -1314,6 +938,7 @@ footer p{
 }
 
 
+
 .tabela-container table{
 
     width:100%;
@@ -1321,6 +946,7 @@ footer p{
     border-collapse:collapse;
 
 }
+
 
 
 .tabela-container th{
@@ -1334,6 +960,7 @@ footer p{
 }
 
 
+
 .tabela-container td{
 
     padding:15px;
@@ -1345,7 +972,12 @@ footer p{
 }
 
 
-.time{
+/* TIME DA TABELA
+   (nome diferente para não conflitar com o gerador)
+*/
+
+
+.tabela-time{
 
     display:flex;
 
@@ -1358,7 +990,8 @@ footer p{
 }
 
 
-.time img{
+
+.tabela-time img{
 
     width:35px;
 
@@ -1367,33 +1000,23 @@ footer p{
     object-fit:contain;
 
 }
-#brasileirao .titulo span{
-
-    font-size:30px;
-
-}
 
 
-#brasileirao .titulo h2{
 
-    font-size:100px;
 
-    line-height:0.95;
+/* =====================================================
+   PRÓXIMOS JOGOS
+===================================================== */
 
-    margin:20px 0;
+
+#rodada{
+
+    background:#111;
 
 }
 
 
-#brasileirao .titulo p{
 
-    font-size:24px;
-
-    max-width:900px;
-
-    margin:auto;
-
-}
 #jogos{
 
     width:100%;
@@ -1404,11 +1027,12 @@ footer p{
 
     display:grid;
 
-    grid-template-columns:repeat(4, minmax(0,1fr));
+    grid-template-columns:repeat(4,minmax(0,1fr));
 
     gap:25px;
 
 }
+
 
 
 .jogo{
@@ -1421,11 +1045,18 @@ footer p{
 
     padding:25px;
 
+    min-height:230px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:space-between;
+
     text-align:center;
 
-    box-shadow:0 15px 35px rgba(0,0,0,.35);
-
 }
+
 
 
 .times-jogo{
@@ -1439,6 +1070,7 @@ footer p{
     gap:25px;
 
 }
+
 
 
 .times-jogo div{
@@ -1456,6 +1088,7 @@ footer p{
 }
 
 
+
 .times-jogo img{
 
     width:55px;
@@ -1467,6 +1100,7 @@ footer p{
 }
 
 
+
 .times-jogo span{
 
     font-size:25px;
@@ -1476,48 +1110,7 @@ footer p{
     color:#4ba6db;
 
 }
-#rodada .titulo span{
 
-    font-size:30px;
-
-}
-
-
-#rodada .titulo h2{
-
-    font-size:100px;
-
-    line-height:.95;
-
-}
-
-
-#rodada .titulo p{
-
-    font-size:24px;
-
-}
-.jogo{
-
-    background:#14213D;
-
-    border:1px solid rgba(255,255,255,.08);
-
-    border-radius:20px;
-
-    padding:25px;
-
-    text-align:center;
-
-    min-height:230px;
-
-    display:flex;
-
-    flex-direction:column;
-
-    justify-content:space-between;
-
-}
 
 
 .data-jogo{
@@ -1530,86 +1123,431 @@ footer p{
 
     color:#d7d7d7;
 
-    font-size:16px;
-
-}
-
-.paginacao{
-
-    display:flex !important;
-
-    flex-direction:row !important;
-
-    justify-content:center !important;
-
-    align-items:center !important;
-
-    gap:25px !important;
-
-    flex-wrap:nowrap !important;
-
 }
 
 
-.paginacao button{
 
-    width:auto !important;
+/* =====================================================
+   FOOTER
+===================================================== */
 
-    min-width:140px;
+
+footer{
+
+    background:#000;
+
+    padding:45px 20px;
+
+    text-align:center;
+
+    border-top:1px solid rgba(255,255,255,.08);
 
 }
-@media(max-width:1200px){
+
+
+
+footer p{
+
+    color:#bbb;
+
+}
+/* =====================================================
+   RESPONSIVIDADE FINAL
+===================================================== */
+
+
+/* =========================
+   NOTEBOOK
+========================= */
+
+@media(max-width:1600px){
+
+    #listaJogos{
+
+        grid-template-columns:repeat(3,minmax(0,1fr));
+
+    }
+
 
     #jogos{
 
-        grid-template-columns:repeat(2, minmax(0,1fr));
+        grid-template-columns:repeat(3,minmax(0,1fr));
 
     }
 
 }
 
 
-@media(max-width:700px){
+
+/* =========================
+   TABLET
+========================= */
+
+@media(max-width:1100px){
+
+    .hero{
+
+        gap:30px;
+
+    }
+
+
+    .hero h1{
+
+        font-size:75px;
+
+    }
+
+
+
+    #listaJogos{
+
+        grid-template-columns:repeat(2,minmax(0,1fr));
+
+    }
+
+
+    #jogos{
+
+        grid-template-columns:repeat(2,minmax(0,1fr));
+
+    }
+
+}
+
+
+
+/* =========================
+   TABLET PEQUENO
+========================= */
+
+@media(max-width:800px){
+
+
+    header{
+
+        flex-direction:column;
+
+        gap:20px;
+
+        padding:20px;
+
+    }
+
+
+    nav{
+
+        flex-wrap:wrap;
+
+        justify-content:center;
+
+        gap:15px;
+
+    }
+
+
+    .hero{
+
+        flex-direction:column;
+
+        text-align:center;
+
+        padding:150px 25px 60px;
+
+    }
+
+
+    .hero h1{
+
+        font-size:55px;
+
+    }
+
+
+    .hero p{
+
+        font-size:18px;
+
+    }
+
+
+    .titulo h2{
+
+        font-size:60px;
+
+    }
+
+
+
+    #listaJogos{
+
+        grid-template-columns:1fr;
+
+    }
+
 
     #jogos{
 
         grid-template-columns:1fr;
 
-        padding:0;
+    }
+
+
+}
+
+
+
+/* =========================
+   CELULAR
+========================= */
+
+@media(max-width:650px){
+
+
+    section{
+
+        padding:90px 20px;
 
     }
 
+
+
+    .hero h1{
+
+        font-size:45px;
+
+        line-height:1;
+
+    }
+
+
+    .hero p{
+
+        font-size:16px;
+
+    }
+
+
+
+    .btn{
+
+        width:100%;
+
+    }
+
+
+
+    .gerador-botoes{
+
+        flex-direction:column;
+
+    }
+
+
+
+    .gerador-botoes .btn{
+
+        width:100%;
+
+        min-width:100%;
+
+    }
+
+
+
+    /* GERADOR - UM JOGO POR LINHA */
+
+    #listaJogos{
+
+        display:grid !important;
+
+        grid-template-columns:1fr !important;
+
+        width:100% !important;
+
+    }
+
+
+
+    #listaJogos .card{
+
+        width:100% !important;
+
+        max-width:100% !important;
+
+    }
+
+
+
+    #listaJogos .times{
+
+        grid-template-columns:1fr !important;
+
+    }
+
+
+
+    #listaJogos .time{
+
+        width:100% !important;
+
+    }
+
+
+
+    /* PRÓXIMOS JOGOS */
+
+    #jogos{
+
+        grid-template-columns:1fr !important;
+
+    }
+
+
+
+    .jogo{
+
+        width:100%;
+
+    }
+
+
+
+    .times-jogo{
+
+        gap:10px;
+
+    }
+
+
+
+    .times-jogo span{
+
+        font-size:18px;
+
+    }
+
+
+
+    .card{
+
+        padding:18px;
+
+    }
+
+
+
+    .linha-excluir{
+
+        flex-direction:column;
+
+    }
+
+
+
+    .linha-excluir input{
+
+        width:100%;
+
+    }
+
+
+
+    .listaFiltrosPlacar{
+
+        flex-direction:column;
+
+    }
+
+
+
+    .listaFiltrosPlacar p{
+
+        width:100%;
+
+    }
+
+
+
+    #painelResumo{
+
+        padding:20px;
+
+    }
+
+
+
+    #total{
+
+        font-size:22px;
+
+    }
+
+
+
+    .resumoCabecalho{
+
+        flex-direction:column;
+
+        text-align:center;
+
+    }
+
+
+
+    .btnExportar{
+
+        width:100%;
+
+    }
+
+
+
+    #resultado{
+
+        padding:10px;
+
+    }
+
+
+
+    .paginacao{
+
+        flex-direction:column;
+
+    }
+
+
+
+    .paginacao button{
+
+        width:100%;
+
+    }
+
+
 }
-.jogo{
+/* Compatibilidade tabela antiga */
 
-    width:100%;
-
-    min-width:0;
-
-    background:#14213D;
-
-    border-radius:20px;
-
-    padding:25px;
+.tabela-container .time{
 
     display:flex;
 
-    flex-direction:column;
+    align-items:center;
 
-    justify-content:space-between;
+    gap:15px;
 
-}
-.times-jogo strong{
-
-    font-size:15px;
-
-    text-align:center;
-
-    max-width:120px;
-
-    overflow:hidden;
-
-    text-overflow:ellipsis;
+    text-align:left;
 
 }
 
+
+.tabela-container .time img{
+
+    width:35px;
+
+    height:35px;
+
+    object-fit:contain;
+
+}
