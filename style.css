@@ -34,29 +34,30 @@ body{
 ========================= */
 
 header{
-
     position:fixed;
     top:0;
     left:0;
 
     width:100%;
-
-    padding:25px 8%;
+    height:80px;
 
     display:flex;
     justify-content:space-between;
     align-items:center;
 
-    z-index:999;
+    padding:0 8%;
 
+    background:rgba(0,0,0,.85);
+    backdrop-filter:blur(12px);
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+
+    z-index:9999;
 }
 
 
 header.scrolled{
-
-    background:#000;
-    backdrop-filter:blur(10px);
-
+    background:rgba(0,0,0,.95);
 }
 
 
@@ -946,6 +947,37 @@ section{
     border-collapse:collapse;
 
 }
+.tabela-container table{
+
+    width:100%;
+
+    table-layout:fixed;
+
+    border-collapse:collapse;
+
+}
+.tabela-container td:nth-child(1),
+.tabela-container th:nth-child(1){
+
+    width:40px;
+
+}
+
+.tabela-container td:nth-child(2),
+.tabela-container th:nth-child(2){
+
+    width:auto;
+
+}
+
+.tabela-container td:nth-child(n+3),
+.tabela-container th:nth-child(n+3){
+
+    width:55px;
+
+    text-align:center;
+
+}
 
 
 
@@ -983,21 +1015,29 @@ section{
 
     align-items:center;
 
-    gap:15px;
+    gap:8px;
 
-    text-align:left;
+    white-space:nowrap;
 
 }
 
-
-
 .tabela-time img{
 
-    width:35px;
+    width:26px;
 
-    height:35px;
+    height:26px;
 
-    object-fit:contain;
+    flex-shrink:0;
+
+}
+
+.tabela-time span{
+
+    overflow:hidden;
+
+    text-overflow:ellipsis;
+
+    white-space:nowrap;
 
 }
 
@@ -1535,9 +1575,11 @@ footer p{
 
     align-items:center;
 
-    gap:15px;
+    gap:8px;
 
     text-align:left;
+
+    white-space:nowrap;
 
 }
 
@@ -1549,57 +1591,5 @@ footer p{
     height:35px;
 
     object-fit:contain;
-
-}
-/* ==========================================
-   TABELA RESPONSIVA CELULAR
-========================================== */
-
-@media (max-width:650px){
-
-    /* Esconde E, D, GP e SG */
-
-    .tabela-container th:nth-child(6),
-    .tabela-container td:nth-child(6),
-
-    .tabela-container th:nth-child(7),
-    .tabela-container td:nth-child(7),
-
-    .tabela-container th:nth-child(8),
-    .tabela-container td:nth-child(8),
-
-    .tabela-container th:nth-child(9),
-    .tabela-container td:nth-child(9){
-
-        display:none;
-
-    }
-
-    .tabela-container th,
-    .tabela-container td{
-
-        padding:8px 4px;
-        font-size:12px;
-
-    }
-
-    .tabela-container .time{
-
-        gap:6px;
-
-    }
-
-    .tabela-container .time img{
-
-        width:22px;
-        height:22px;
-
-    }
-
-    .tabela-container .time span{
-
-        font-size:12px;
-
-    }
 
 }
