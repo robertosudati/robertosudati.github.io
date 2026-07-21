@@ -26,11 +26,15 @@ const tabela = dados.standings[0].table;
 
             <td>${time.position}</td>
 
-            <td class="time">
+            <td>
 
-    <img src="${time.team.crest}" alt="${time.team.name}">
+    <div class="tabela-time">
 
-    ${time.team.name}
+        <img src="${time.team.crest}" alt="${time.team.name}">
+
+        <span>${time.team.name}</span>
+
+    </div>
 
 </td>
 
