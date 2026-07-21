@@ -1012,32 +1012,24 @@ section{
 .tabela-time{
 
     display:flex;
-
     align-items:center;
-
     gap:8px;
-
-    white-space:nowrap;
+    min-width:0;
 
 }
 
 .tabela-time img{
 
     width:26px;
-
     height:26px;
-
     flex-shrink:0;
 
 }
 
 .tabela-time span{
 
-    overflow:hidden;
-
-    text-overflow:ellipsis;
-
-    white-space:nowrap;
+    display:block;
+    color:#fff;
 
 }
 
