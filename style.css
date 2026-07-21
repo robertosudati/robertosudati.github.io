@@ -951,7 +951,7 @@ section{
 
     width:100%;
 
-    
+    table-layout:fixed;
 
     border-collapse:collapse;
 
@@ -1012,24 +1012,32 @@ section{
 .tabela-time{
 
     display:flex;
+
     align-items:center;
+
     gap:8px;
-    min-width:0;
+
+    white-space:nowrap;
 
 }
 
 .tabela-time img{
 
     width:26px;
+
     height:26px;
+
     flex-shrink:0;
 
 }
 
 .tabela-time span{
 
-    display:block;
-    color:#fff;
+    overflow:hidden;
+
+    text-overflow:ellipsis;
+
+    white-space:nowrap;
 
 }
 
