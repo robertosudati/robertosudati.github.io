@@ -1551,3 +1551,55 @@ footer p{
     object-fit:contain;
 
 }
+/* ==========================================
+   TABELA RESPONSIVA CELULAR
+========================================== */
+
+@media (max-width:650px){
+
+    /* Esconde E, D, GP e SG */
+
+    .tabela-container th:nth-child(6),
+    .tabela-container td:nth-child(6),
+
+    .tabela-container th:nth-child(7),
+    .tabela-container td:nth-child(7),
+
+    .tabela-container th:nth-child(8),
+    .tabela-container td:nth-child(8),
+
+    .tabela-container th:nth-child(9),
+    .tabela-container td:nth-child(9){
+
+        display:none;
+
+    }
+
+    .tabela-container th,
+    .tabela-container td{
+
+        padding:8px 4px;
+        font-size:12px;
+
+    }
+
+    .tabela-container .time{
+
+        gap:6px;
+
+    }
+
+    .tabela-container .time img{
+
+        width:22px;
+        height:22px;
+
+    }
+
+    .tabela-container .time span{
+
+        font-size:12px;
+
+    }
+
+}
